@@ -39,10 +39,7 @@ jobs:
     environment: Load-Test
     steps:
       - run: 'echo "Testing..."'
-      - uses: juliangruber/sleep-action@v2.0.3
-        with:
-          # A time period as ms or string (100, 10s, 1m)
-          time: 15s
+      - run: sleep 15
   Production:
     if: github.event_name == 'workflow_dispatch' && inputs.environment == 'Production'
     runs-on: ubuntu-latest
@@ -51,10 +48,18 @@ jobs:
     env:
       URL: https://writeabout.net
     steps:
-      - run: 'echo "Step 1 deploying..."'
-      - run: 'echo "Step 2 deploying..."'
-      - run: 'echo "Step 3 deploying..."'
-      - run: 'echo "Step 4 deploying..."'
-      - run: 'echo "Step 5 deploying..."'
-       
-    
+      - run: |
+          echo "Step 1 deploying..."
+          sleep 10
+      - run: |
+          echo "Step 2 deploying..."
+          sleep 10
+      - run: |
+          echo "Step 3 deploying..."
+          sleep 10
+      - run: |
+          echo "Step 4 deploying..."
+          sleep 10
+      - run: |
+          echo "Step 5 deploying..."
+          sleep 10
