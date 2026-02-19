@@ -17,6 +17,6 @@ jobs:
     steps:
       - run: echo "${{ github.event_name }}"
       - run: echo "${{ github.ref }}"
-      - uses: actions/checkout@latest
+      - uses: actions/checkout@v6
       - run: ls -1
     
